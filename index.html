@@ -18,7 +18,7 @@
 <body>
 
     <div class="container" id="app">
-        <h1 class="display-3">{{title}}</h1>
+        <h1 class="display-3">[[title]]</h1>
         <p class="lead" @click="loaddata(1)" data-bs-toggle="modal" data-bs-target="#exampleModal">Leanne Graham</p>
         <p class="lead"  @click="loaddata(2)"data-bs-toggle="modal" data-bs-target="#exampleModal">Ervin Howell</p>
         <p class="lead"  @click="loaddata(3)" data-bs-toggle="modal" data-bs-target="#exampleModal">Clementine Bauch</p>
@@ -27,13 +27,13 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">{{name}}</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">[[name]]</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Username: {{username}}</p>
-                    <p>Email: {{email}}</p>
-                    <p>Phone: {{phone}}</p>
+                    <p>Username: [[username]]</p>
+                    <p>Email: [[email]]</p>
+                    <p>Phone: [[phone]]</p>
                 </div>
               </div>
             </div>
@@ -51,6 +51,9 @@
                     email: "",
                     phone: ""
                 }
+            },
+            compilerOptions:{
+                delimiters: ["[[","]]"],
             },
             methods: {
                 async loaddata(id) {
